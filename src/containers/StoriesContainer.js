@@ -21,7 +21,14 @@ class StoriesContainer extends Component {
   }
 
   render() {
-    return this.state.newstories.map(storyId =>(<Story key={storyId} storyId={storyId} />));
+    return (
+      <div>
+        <h4>New Stories</h4>
+        <div className="new_stories">
+          {this.state.newstories.map(storyId =>(<Story key={storyId} storyId={storyId} />))}
+        </div>
+      </div>
+    );
   }
 }
 export default StoriesContainer;
