@@ -24,9 +24,17 @@ class Story extends Component{
   render() {
     return (
       <div className="new_story">
-        <div><label className="new_story_tittle">{this.state.story.title}</label></div>
-        <div><label className="new_story_by">{this.state.story.by} {this.state.story.time}</label></div>
-        <div><a href={this.state.story.url}>Full Story</a></div>
+        <div>
+          <label className="new_story_tittle"><b>{this.state.story.title}</b></label>
+        </div>
+        <div>
+          <a href={this.state.story.url}>Full Story</a>
+          <br/>
+          <div style={{ display: "flex", marginBottom: "10px", marginTop: "50px" }}>
+            <div className="new_story_by">{this.state.story.by} {this.state.story.time}</div>
+            <div className="score"><i className="fa fa-heart">&nbsp;{this.state.story.score}</i></div>
+          </div>
+        </div>
       </div>
     )
   }
