@@ -1,8 +1,14 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import StoriesContainer from './containers/StoriesContainer';
 
 function App() {
   return(
-    <h1>hii</h1>
+    <Router>
+      <div>
+        <Route path="/" component={StoriesContainer} />
+      </div>
+    </Router>
   )
 }
 
