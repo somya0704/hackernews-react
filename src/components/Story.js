@@ -8,14 +8,16 @@ class Story extends Component{
 
     this.state = {
       story: {},
-      loading: true
+      loading: false
     }
   }
 
   componentDidMount(){
     const {storyId}  = this.props;
     GetStory(storyId).then((res) => {
-      this.setState({ story: res, loading: false });
+      if (res){
+        this.setState({ story: res, loading: true });
+      }
     }).catch(() => {
       this.setState({ loading: false });
     });
