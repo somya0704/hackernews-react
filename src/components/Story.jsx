@@ -30,7 +30,7 @@ class Story extends Component{
           <label className="new_story_tittle"><b>{this.state.story.title}</b></label>
         </div>
         <div>
-          <a href={this.state.story.url}>Full Story</a>
+          <a href={this.state.story.url} style={{display: "table-cell"}} target="_blank">Full Story</a>
           <br/>
           <div style={{ display: "flex", marginBottom: "10px", marginTop: "50px" }}>
             <div className="new_story_by">{this.state.story.by} {this.state.story.time}</div>
