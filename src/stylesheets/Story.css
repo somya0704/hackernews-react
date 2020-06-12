@@ -1,0 +1,25 @@
+.new_story{
+  margin: 20px;
+  height: 190px;
+  width: 190px;
+  background-color: #faebd7a8;
+  padding: 10px;
+  font-family: monospace;
+}
+
+.new_story_tittle{
+  font-size: 15px;
+}
+
+.new_story_by{
+  text-align: left;
+  width: 50px;
+  margin: 5px;
+}
+
+.score{
+  text-align: right;
+  width: 30px;
+  margin-left: 90px;
+  margin-right: 10px;
+}
