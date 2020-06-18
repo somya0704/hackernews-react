@@ -4,7 +4,7 @@ import Story from '../components/Story'
 import ReactPaginate from 'react-paginate';
 import '../stylesheets/StoriesContainer.css'
 
-class StoriesContainer extends Component {
+class NewStoriesContainer extends Component {
   constructor(props) {
     super(props)
 
@@ -40,7 +40,7 @@ class StoriesContainer extends Component {
   render() {
     return (
       <div>
-        <div className="new_stories" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+        <div className="new_stories" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", marginTop: "95px" }}>
           {this.state.newstories.map(storyId =>(<Story key={storyId} storyId={storyId} />))}
         </div>
         <div>
@@ -61,5 +61,5 @@ class StoriesContainer extends Component {
     );
   }
 }
-export default StoriesContainer;
+export default NewStoriesContainer;
 

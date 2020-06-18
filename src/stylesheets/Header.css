@@ -4,6 +4,9 @@
   height: 70px;
   display: flex;
   list-style: none;
+  position: fixed;
+  width: -webkit-fill-available;
+  margin-top: -101px;
 }
 .TitleNav{
   color: white;
