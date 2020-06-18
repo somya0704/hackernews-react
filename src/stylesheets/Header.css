@@ -1,0 +1,44 @@
+.Header{
+  margin: -8px;
+  background-color: #f60;
+  height: 70px;
+  display: flex;
+  list-style: none;
+}
+.TitleNav{
+  color: white;
+  font-size: 25px;
+  text-decoration: none;
+  margin-left: 98px;
+  margin-top: 22px;
+}
+
+.logo{
+  padding: 1px 10px;
+  border: 1px solid #fff;
+  margin-right: 6px;
+  font-family: sans-serif;
+}
+
+.dropdown{
+  margin-top: 10px;
+  border: 1px solid black;
+  background-color: white;
+  padding: 13px;
+  margin-left: -60px;
+}
+
+.Subhead{
+  display: flex;
+  color: white;
+  list-style: none;
+  font-size: 21px;
+  margin-top: 26px;
+  margin-left: 68px;
+}
+
+.StoryNav{
+  margin-right: 20px;
+}
+
+

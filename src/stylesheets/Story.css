@@ -4,7 +4,8 @@
   width: 190px;
   background-color: #faebd7a8;
   padding: 10px;
-  font-family: monospace;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10px;
 }
 
 .new_story_tittle{

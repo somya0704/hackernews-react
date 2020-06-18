@@ -40,7 +40,6 @@ class StoriesContainer extends Component {
   render() {
     return (
       <div>
-        <h4>New Stories</h4>
         <div className="new_stories" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
           {this.state.newstories.map(storyId =>(<Story key={storyId} storyId={storyId} />))}
         </div>
