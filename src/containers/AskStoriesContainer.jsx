@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-import {GetTopStories} from '../config/api'
+import {GetAskStories} from '../config/api'
 import Story from '../components/Story'
 import ReactPaginate from 'react-paginate';
 import '../stylesheets/StoriesContainer.css'
 
-class TopStoriesContainer extends Component {
+class AskStoriesContainer extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      topstories: [],
+      askstories: [],
       loading: false,
       offset: 0,
       perPage: 25,
@@ -17,10 +17,10 @@ class TopStoriesContainer extends Component {
     }
   }
 
-  receivedTopStories() {
-    GetTopStories().then((res) => {
+  receivedAskStories() {
+    GetAskStories().then((res) => {
       const slice = res.slice(this.state.offset, this.state.offset + this.state.perPage)
-      this.setState({ topstories: slice, loading: true, pageCount: Math.ceil(res.length / this.state.perPage) });
+      this.setState({ askstories: slice, loading: true, pageCount: Math.ceil(res.length / this.state.perPage) });
     }).catch(() => {
       this.setState({ loading: false });
     });
@@ -29,18 +29,18 @@ class TopStoriesContainer extends Component {
   handlePageClick = (e) => {
     const selectedPage = e.selected;
     const offset = selectedPage * this.state.perPage;
-    this.setState({currentPage: selectedPage, offset: offset}, () => {this.receivedTopStories()});
+    this.setState({currentPage: selectedPage, offset: offset}, () => {this.receivedAskStories()});
   };
 
   componentDidMount() {
-    this.receivedTopStories()
+    this.receivedAskStories()
   }
 
   render() {
     return (
       <>
-        <div className="top_stories" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", marginTop: "95px" }}>
-          {this.state.topstories.map(storyId =>(<Story key={storyId} storyId={storyId} />))}
+        <div className="ask_stories" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", marginTop: "95px" }}>
+          {this.state.askstories.map(storyId =>(<Story key={storyId} storyId={storyId} />))}
         </div>
         <div>
           <ReactPaginate
@@ -60,4 +60,4 @@ class TopStoriesContainer extends Component {
     );
   }
 }
-export default TopStoriesContainer;
+export default AskStoriesContainer;

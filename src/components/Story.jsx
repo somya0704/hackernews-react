@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import {GetStory} from '../config/api'
 import '../stylesheets/Story.css'
+import Moment from 'moment';
+Moment.globalFormat = 'D MMM YYYY';
 
 class Story extends Component{
   constructor(props) {
@@ -33,7 +35,10 @@ class Story extends Component{
           <a href={this.state.story.url} style={{display: "table-cell"}} target="_blank">Full Story</a>
           <br/>
           <div style={{ display: "flex", marginBottom: "10px", marginTop: "50px" }}>
-            <div className="new_story_by">{this.state.story.by} {this.state.story.time}</div>
+            <div className="new_story_by" >
+              {this.state.story.by}<br/>
+              {this.state.story.time}
+            </div>
             <div className="score"><i className="fa fa-heart">&nbsp;{this.state.story.score}</i></div>
           </div>
         </div>

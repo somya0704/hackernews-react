@@ -28,8 +28,8 @@ class Header extends Component {
               <div style={{ marginTop: "10px" }}><a href="/topStories" style={{ color: "black", textDecoration: "none" }}>Top Stories</a></div>
             </div>
           </div>
-          <div style={{ marginRight: "20px", marginLeft: "20px" }}><a href="/" style={{ color: "white", textDecoration: "none" }}>Ask</a></div>
-          <div style={{ marginRight: "20px", marginLeft: "20px" }}><a href="/" style={{ color: "white", textDecoration: "none" }}>Jobs</a></div>
+          <div style={{ marginRight: "20px", marginLeft: "20px" }}><a href="/askStories" style={{ color: "white", textDecoration: "none" }}>Ask</a></div>
+          <div style={{ marginRight: "20px", marginLeft: "20px" }}><a href="/jobStories" style={{ color: "white", textDecoration: "none" }}>Jobs</a></div>
         </div>
       </div>
     );

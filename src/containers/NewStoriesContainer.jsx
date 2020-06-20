@@ -15,7 +15,6 @@ class NewStoriesContainer extends Component {
       perPage: 25,
       currentPage: 0
     }
-    this.handlePageClick = this.handlePageClick.bind(this);
   }
 
   receivedNewStories() {
@@ -39,7 +38,7 @@ class NewStoriesContainer extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <div className="new_stories" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", marginTop: "95px" }}>
           {this.state.newstories.map(storyId =>(<Story key={storyId} storyId={storyId} />))}
         </div>
@@ -57,7 +56,7 @@ class NewStoriesContainer extends Component {
             subContainerClassName={"pages pagination"}
             activeClassName={"active"}/>
         </div>
-      </div>
+      </>
     );
   }
 }
