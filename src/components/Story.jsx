@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import {GetStory} from '../config/api'
 import '../stylesheets/Story.css'
 import Moment from 'moment';
-Moment.globalFormat = 'D MMM YYYY';
 
 class Story extends Component{
   constructor(props) {
@@ -25,6 +24,11 @@ class Story extends Component{
     });
   }
 
+  onLoadStoryTime = (time) => {
+    alert("loaded")
+    console.log(time)
+  }
+
   render() {
     return (
       <div className="new_story">
@@ -37,7 +41,7 @@ class Story extends Component{
           <div style={{ display: "flex", marginBottom: "10px", marginTop: "50px" }}>
             <div className="new_story_by" >
               {this.state.story.by}<br/>
-              {this.state.story.time}
+              <span onLoad={() => this.onLoadStoryTime(this.state.story.time)}>{this.state.story.time}</span>
             </div>
             <div className="score"><i className="fa fa-heart">&nbsp;{this.state.story.score}</i></div>
           </div>

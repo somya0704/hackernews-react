@@ -11,7 +11,7 @@ function Home() {
     <Router>
       <>
         <Header />
-        <Route exact from="/" to="newStories" component={NewStoriesContainer} />
+        <Route path="/" component={NewStoriesContainer} />
         <Route path="/topStories" component={TopStoriesContainer} />
         <Route path="/askStories" component={AskStoriesContainer} />
         <Route path="/jobStories" component={JobStoriesContainer} />

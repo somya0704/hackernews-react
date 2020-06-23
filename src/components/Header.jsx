@@ -24,7 +24,7 @@ class Header extends Component {
           <div className="StoryNav">
             <div onClick={this.onClickStories} style={{cursor: "pointer"}}>Stories&nbsp;<i className="fa fa-caret-down"></i></div>
             <div className="dropdown" style={{display: this.state.isdropdownvisible ? "block" : "none" }}>
-              <div style={{ marginTop: "2px" }}><a href="/" style={{ color: "black", textDecoration: "none" }}>New Stories</a></div>
+              <div style={{ marginTop: "2px" }}><a href="/newStories" style={{ color: "black", textDecoration: "none" }}>New Stories</a></div>
               <div style={{ marginTop: "10px" }}><a href="/topStories" style={{ color: "black", textDecoration: "none" }}>Top Stories</a></div>
             </div>
           </div>
