@@ -11,10 +11,10 @@ function Home() {
     <Router>
       <>
         <Header />
-        <Route path="/" component={NewStoriesContainer} />
-        <Route path="/topStories" component={TopStoriesContainer} />
-        <Route path="/askStories" component={AskStoriesContainer} />
-        <Route path="/jobStories" component={JobStoriesContainer} />
+        <Route exact path="/" component={NewStoriesContainer} />
+        <Route exact path="/topStories" component={TopStoriesContainer} />
+        <Route exact path="/askStories" component={AskStoriesContainer} />
+        <Route exact path="/jobStories" component={JobStoriesContainer} />
       </>
     </Router>
   )
