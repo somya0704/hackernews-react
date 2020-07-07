@@ -42,9 +42,6 @@ const SubHead = styled.div`
   margin-left: 68px;
 `
 
-
-
-
 function Header() {
 
   const [dropdownvisible, setdropdownvisible] = useState('false');
