@@ -30,21 +30,21 @@ function JobtoriesContainer() {
           </div>
           <div>
             <Paginator
-            totalRecords={jobstories.length}
-            pageLimit={pageLimit}
-            pageNeighbours={1}
-            setOffset={setOffset}
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-            pageActiveClass={"active"}
-            pageContainerClass={"react-hooks-paginator"}
-            pagePrevText={"prev"}
-            pageNextText={"next"}
-            pageItemClass={"page-item"}
-            pageLinkClass={"page-link"}
-            pagePrevClass={"page-link"}
-            pageNextClass={"next-link"}
-          />
+              totalRecords={jobstories.length}
+              pageLimit={pageLimit}
+              pageNeighbours={1}
+              setOffset={setOffset}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              pageActiveClass={"active"}
+              pageContainerClass={"react-hooks-paginator"}
+              pagePrevText={"prev"}
+              pageNextText={"next"}
+              pageItemClass={"page-item"}
+              pageLinkClass={"page-link"}
+              pagePrevClass={"page-link"}
+              pageNextClass={"next-link"}
+            />
           </div>
         </>
       }

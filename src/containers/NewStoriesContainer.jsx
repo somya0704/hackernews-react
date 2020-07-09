@@ -1,64 +1,54 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import {GetNewStories} from '../config/api'
 import Story from '../components/Story'
-import ReactPaginate from 'react-paginate';
+import Paginator from 'react-hooks-paginator';
 import '../stylesheets/StoriesContainer.css'
 
-class NewStoriesContainer extends Component {
-  constructor(props) {
-    super(props)
+function NewStoriesContainer() {
+  const pageLimit = 25,
+    [newstories, setnewstories] = useState([]),
+    [loading, setloading] = useState(false),
+    [offset, setOffset] = useState(0),
+    [currentPage, setCurrentPage] = useState(1);
 
-    this.state = {
-      newstories: [],
-      loading: false,
-      offset: 0,
-      perPage: 25,
-      currentPage: 0
-    }
-  }
-
-  receivedNewStories() {
+  useEffect(() => {
     GetNewStories().then((res) => {
-      const slice = res.slice(this.state.offset, this.state.offset + this.state.perPage)
-      this.setState({ newstories: slice, loading: true, pageCount: Math.ceil(res.length / this.state.perPage) });
+      setnewstories(res.slice(offset, offset + pageLimit));
+      setloading(true);
     }).catch(() => {
-      this.setState({ loading: false });
+      setloading(false);
     });
-  }
+  });
 
-  handlePageClick = (e) => {
-    const selectedPage = e.selected;
-    const offset = selectedPage * this.state.perPage;
-    this.setState({currentPage: selectedPage, offset: offset}, () => {this.receivedNewStories()});
-  };
-
-  componentDidMount() {
-    this.receivedNewStories()
-  }
-
-  render() {
-    return (
-      <>
+  return (
+    <>
+      { loading &&
+        <>
         <div className="new_stories" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", marginTop: "95px" }}>
-          {this.state.newstories.map(storyId =>(<Story key={storyId} storyId={storyId} />))}
+          {newstories.map(storyId =>(<Story key={storyId} storyId={storyId} />))}
         </div>
         <div>
-          <ReactPaginate
-            previousLabel={"prev"}
-            nextLabel={"next"}
-            breakLabel={"..."}
-            breakClassName={"break-me"}
-            pageCount={this.state.pageCount}
-            marginPagesDisplayed={2}
-            pageRangeDisplayed={5}
-            onPageChange={this.handlePageClick}
-            containerClassName={"pagination"}
-            subContainerClassName={"pages pagination"}
-            activeClassName={"active"}/>
+          <Paginator
+            totalRecords={newstories.length}
+            pageLimit={pageLimit}
+            pageNeighbours={1}
+            setOffset={setOffset}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            pageActiveClass={"active"}
+            pageContainerClass={"react-hooks-paginator"}
+            pagePrevText={"prev"}
+            pageNextText={"next"}
+            pageItemClass={"page-item"}
+            pageLinkClass={"page-link"}
+            pagePrevClass={"page-link"}
+            pageNextClass={"next-link"}
+          />
         </div>
-      </>
-    );
-  }
+        </>
+      }
+    </>
+  );
 }
 export default NewStoriesContainer;
 
